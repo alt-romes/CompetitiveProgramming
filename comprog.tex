@@ -28,7 +28,7 @@
 }
 
 % Minted
-\usepackage{minted}
+\usepackage[cache=false]{minted}
 \newcommand{\code}[1]{\inputminted[fontsize=\normalsize,baselinestretch=1]{cpp}{_code/#1}}
 \newcommand{\bashcode}[1]{\inputminted{bash}{_code/#1}}
 \newcommand{\regcode}[1]{\inputminted{cpp}{code/#1}}
@@ -860,7 +860,6 @@
 
     \subsection{Bit Hacks}
         \code{tricks/snoob.cpp}
-        \newpage
     \begin{tabular}{@{}l|l|l@{}}
     \toprule
     Catalan	&	$C_0=1$, $C_n=\frac{1}{n+1}\binom{2n}{n} = \sum_{i=0}^{n-1}C_iC_{n-i-1} = \frac{4n-2}{n+1}C_{n-1}$  & \\
@@ -872,7 +871,6 @@
     \bottomrule
     \end{tabular}
 
-    \vspace{10pt}
     \begin{tabular}{ll}
         \#labeled rooted trees & $n^{n-1}$ \\
         \#labeled unrooted trees & $n^{n-2}$ \\
@@ -1274,28 +1272,46 @@
                     &x \% y = x - y \left\lfloor x / y \right\rfloor
                 \end{align*}
 
+    \section{Custom}
+    \subsection{Geometric Progression}
+    \begin{equation}
+        a_{n}=a_{n-1} \times r
+    \end{equation}
 
+    \begin{equation}
+        a_{n}=a_1 \times r^{n-1}
+    \end{equation}
 
-    \clearpage
-    \section*{Practice Contest Checklist}
-        \begin{itemize}
-            \item How many operations per second? Compare to local machine.
-            \item What is the stack size?
-            \item How to use printf/scanf with long long/long double?
-            \item Are \texttt{\_{}\_{}int128} and \texttt{\_{}\_{}float128} available?
-            \item Does MLE give RTE or MLE as a verdict? What about stack overflow?
-            \item What is \texttt{RAND\_{}MAX}?
-            \item How does the judge handle extra spaces (or missing newlines) in the output?
-            \item Look at documentation for programming languages.
-            \item Try different programming languages: C++, Java and Python.
-            \item Try the submit script.
-            \item Try local programs: i?python[23], factor.
-            \item Try submitting with \texttt{assert(false)} and \texttt{assert(true)}.
-            \item Return-value from \texttt{main}.
-            \item Look for directory with sample test cases.
-            \item Make sure printing works.
+    \begin{equation}
+        S_{n}=\frac{a(1-r^n)}{1-r}
+    \end{equation}
 
-            \item Remove this page from the notebook.
-        \end{itemize}
+    \subsection{Arithmetic Progression}
+    \begin{equation}
+        {a_{n}=a_{1}+(n-1)r}
+    \end{equation}
+
+    \begin{equation}
+        {a_{n}=a_{m}+(n-m)r}
+    \end{equation}
+
+    \begin{equation}
+        S_n=\frac{n(a_1 + a_n)}{2}
+    \end{equation}
+
+    \subsection{: )}
+    \begin{itemize}
+        \item | $n!$        |   10 | 3 628 800 |
+        \item | $n^6$       |   10 | 1 000 000 |
+        \item | $n^2*2^n$   |   15 | 7 372 800 |
+        \item | $2^n$       |   20 | 1 048 576 |
+        \item | $n^5$       |   20 | 3 200 000 |
+        \item | $n^4$       |   50 | 6 250 000 |
+        \item | $n^3$       |  100 | 1 000 000 |
+        \item | $n^2$       | 1000 | 1 000 000 |
+        \item | $n log n$   | 100K | 1 660 964 |
+        \item | $n$         |   1M | 1 000 000 |
+    \end{itemize}
+
 \end{multicols*}
 \end{document}
